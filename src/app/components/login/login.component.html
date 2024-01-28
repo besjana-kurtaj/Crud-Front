@@ -9,11 +9,11 @@
                     <div class="panel-body p-3">
                         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                             <div class="form-group pt-3">
-                                <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"><input formControlName="username" type="text" placeholder="Username" required> </div>
+                                <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"><input formControlName="username"  class="form-control" type="text" placeholder="Username" required> </div>
                             </div>
                             <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">*Username is required*</small>
                             <div class="form-group pt-3">
-                                <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">  <input formControlName="password" [type]="type" placeholder="Password">                                    </div>
+                                <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">  <input formControlName="password"  class="form-control" [type]="type" placeholder="Password">                                    </div>
                             </div>
                             <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required*</small>
                             <button type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>

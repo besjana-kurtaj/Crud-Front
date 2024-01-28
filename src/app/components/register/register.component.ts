@@ -39,7 +39,7 @@ export class RegisterComponent {
         next:(res=>{
           console.log(res.message);
           this.signUpForm.reset();
-          this.router.navigate(['login']);
+         // this.router.navigate(['login']);
           alert(res.message)
           this.router.navigate(['product/list']);
         }),

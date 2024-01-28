@@ -14,19 +14,17 @@ export class ListProductComponent {
    *
    */
   constructor(private prodSeervices: ProductService,private router:Router) {
+    this.prodSeervices.getAllProduct().subscribe({
+      next:(prod)=>{
+       this.product=prod;  },
+      error: (responese)=>
+     {
+       console.log(responese);
+     }
+    });
     
-    
   }
-  ngOnInit(): void {
-this.prodSeervices.getAllProduct().subscribe({
-  next:(prod)=>{
-this.product=prod;  },
-  error: (responese)=>
-  {
-    console.log(responese);
-  }
-});
-  }
+  
   onDeleteClick(id: any): void {
     this.prodSeervices.deleteProduct(id).subscribe(
       response => {

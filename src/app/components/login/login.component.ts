@@ -27,11 +27,11 @@ export class LoginComponent {
     });
   }
 
-  hideShowPass() {
-    this.isText = !this.isText;
-    this.isText ? (this.eyeIcon = 'fa-eye') : (this.eyeIcon = 'fa-eye-slash');
-    this.isText ? (this.type = 'text') : (this.type = 'password');
-  }
+  // hideShowPass() {
+  //   this.isText = !this.isText;
+  //   this.isText ? (this.eyeIcon = 'fa-eye') : (this.eyeIcon = 'fa-eye-slash');
+  //   this.isText ? (this.type = 'text') : (this.type = 'password');
+  // }
   onSubmit() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);

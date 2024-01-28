@@ -28,24 +28,24 @@ export class AddProductComponent {
         this.router.navigate(['product/list']);
       },
       error: (error) => {
-        console.error('Error adding product:', JSON.stringify(error));
-        // Handle error as needed
+        console.error('Error adding product:');
+        
       }
     });
   }
   
   
-generateRandomId(): string {
-  const idLength = 4;
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let randomId = '';
+// generateRandomId(): string {
+//   const idLength = 4;
+//   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//   let randomId = '';
 
-  for (let i = 0; i < idLength; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    randomId += characters.charAt(randomIndex);
-  }
+//   for (let i = 0; i < idLength; i++) {
+//     const randomIndex = Math.floor(Math.random() * characters.length);
+//     randomId += characters.charAt(randomIndex);
+//   }
 
-  return randomId;
-}
+//   return randomId;
+// }
 
 }

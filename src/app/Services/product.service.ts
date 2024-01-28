@@ -8,16 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
   private baseApiUrl: string="https://localhost:7104/api/Product";
-  private apiUrl = 'https://localhost:7104/api/Product/Create'; // Adjust the URL
-  private incrementalCounter = 1;
+//  private apiUrl = 'https://localhost:7104/api/Product/Create'; 
+  //private incrementalCounter = 1;
   constructor(private http: HttpClient) { }
-  getAllProduct():Observable<Product[]>{
-   
+  getAllProduct():Observable<Product[]>{   
   return this.http.get<Product[]>(this.baseApiUrl+'/List')
   }
   addProduct(product: Product): Observable<any> {
-    product.id=this.generateGuid().toString()
-    return this.http.post(this.apiUrl, product);
+    product.id=this.generateId().toString()
+    return this.http.post(this.baseApiUrl+'/Create', product);
   }
   deleteProduct(id: any): Observable<any> {
     return this.http.delete(`${this.baseApiUrl}/${id}`);
@@ -32,8 +31,7 @@ getProductById(id: any): Observable<Product> {
   // return this.http.get<Product>(this.baseApiUrl+id);
   // }
 
-  private generateGuid(): number {
-    
-    return Math.floor(Math.random() * 100) + 1;
+  private generateId(): number {    
+    return Math.floor(Math.random() * 1000) + 1;
   }
 }

@@ -17,8 +17,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let prod of product">
-            <td>{{prod.id}}</td>
+        <tr *ngFor="let prod of product let i=index">
+            <td>{{i+1}}</td>
             <td>{{prod.name}}</td>
             <td>{{prod.price}}</td>  
              
